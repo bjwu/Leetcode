@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 typedef struct {
-	int *key;
+	int *key;       //队列的元素
 	int top;
 	int rear;
 	int maxSize;
@@ -27,8 +27,13 @@ void myQueuePush(MyQueue* obj, int x) {		//这里没有考虑队列满的情况
 }
 
 /** Removes the element from in front of queue and returns that element. */
-int myQueuePop(MyQueue* obj) {
-	return (obj->key)[(obj->top)--]; 
+int myQueuePop(MyQueue* obj) {      //对于top的underflow的情况做了更新
+    if (obj->top==0) {
+        obj->top=obj->maxSize-1;
+        return (obj->key)[obj->top];
+    }
+    else
+        return (obj->key)[(obj->top)--];
 }
 
 /** Get the front element. */
