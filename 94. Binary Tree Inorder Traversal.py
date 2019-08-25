@@ -11,12 +11,27 @@ class Solution:
         :type root: TreeNode
         :rtype: List[int]
         """
-        def helper(root, output):
-            if not root:
-                return 
-            helper(root.left, output)
-            output.append(root.val)
-            helper(root.right, output)
+        # 递归算法
+        # def helper(root, output):
+        #     if not root:
+        #         return 
+        #     helper(root.left, output)
+        #     output.append(root.val)
+        #     helper(root.right, output)
+        # sol = []
+        # helper(root, sol)
+        # return sol
+        
+        # 循环算法
+        stack = []
         sol = []
-        helper(root, sol)
+        curr = root
+        while stack or curr:
+            if curr:
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                sol.append(curr.val)
+                curr = curr.right
         return sol

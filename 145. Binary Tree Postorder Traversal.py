@@ -6,26 +6,31 @@
 #         self.right = None
 
 class Solution:
-    def preorderTraversal(self, root):
+    def postorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
-        ### 递归算法
-        # if not root:
-        #     return []
-        # else:
-        #     return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+        ### 递归实现
+        # def helper(root):
+        #     if not root:
+        #         return []
+        #     else:
+        #         return helper(root.left)+helper(root.right)+[root.val]
+        # return helper(root)
         
-        ### 循环算法
+        # 循环实现
         stack = []
         sol = []
         curr = root
         while stack or curr:
             if curr:
                 sol.append(curr.val)
-                stack.append(curr.right)
-                curr = curr.left
+                stack.append(curr.left)
+                curr = curr.right
             else:
                 curr = stack.pop()
-        return sol
+        return sol[::-1]
+        
+        
+        
