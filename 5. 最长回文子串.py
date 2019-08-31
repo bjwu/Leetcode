@@ -1,3 +1,39 @@
+"""
+给定一个字符串 s，找到 s 中最长的回文子串。
+"""
+##########################
+# 子问题： P(i,j)= (P(i+1,j−1) and S(i)==S(j))
+# 对于字符串问题，如用动态规划的话，最好采用二阶矩阵，横坐标和纵坐标分别表示字符串首尾位置
+
+
+# 动态规划 
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        # 建立下三角矩阵，横坐标和纵坐标分别表示字符串首尾位置。
+        memo = [[False] * i + [True]*2 for i in range(len(s))] 
+        for j, row in enumerate(memo):
+            for i, ele in enumerate(row):
+                if not ele:
+                    if memo[j-1][i+1] and s[i] == s[j]:
+                        memo[j][i] = True
+        # 从矩阵的True中得出最大长度
+        maxlen = -1
+        p1, p2 = 0, 0
+        for j, row in enumerate(memo):
+            for i in range(len(row)-1):
+                if memo[j][i] and abs(i-j)>maxlen:
+                    p1, p2 = i, j  
+                    maxlen = abs(i-j)
+        return s[p1:(p2+1)]
+
+# 其实该题后半部分可以省略，只需要在开始的遍历过程中注意顺序就行
+# 见下面2018年版
+
+
+
+##################################### 
+# 2018年版
+
 class Solution:
     def longestPalindrome(self, s):
         """
