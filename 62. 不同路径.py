@@ -8,6 +8,7 @@
 
 # 转移方程,m和n为坐标
 # f(m,n) = f(m-1,n) + f(m,n-1)
+# 从小到大的动态规划，应该没有更好的办法了吧
 
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:

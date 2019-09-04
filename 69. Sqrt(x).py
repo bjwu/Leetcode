@@ -1,11 +1,19 @@
-class Solution:
-    def mySqrt(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
-        import math
-        return int(math.sqrt(x))
+"""
+实现 int sqrt(int x) 函数。
 
-# 对单个数的运算，math库比numpy要快
-# 而对于数组的数学运算，则相反
+计算并返回 x 的平方根，其中 x 是非负整数。
+
+由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。
+"""
+
+# 具体看二分法模版
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        left, right = 0, max(x, 1)
+
+        while (left < right):
+            mid = left + (right - left + 1) // 2
+            if mid * mid <= x:
+                left = mid
+            else:
+                right = mid - 1
