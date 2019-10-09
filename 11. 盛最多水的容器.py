@@ -1,3 +1,5 @@
+
+# 采用双指针法，从两端开始遍历，每一轮的结果受制于两边最短的边的长度
 class Solution:
     def maxArea(self, height):
         """
@@ -15,4 +17,3 @@ class Solution:
             else:
                 right -= 1
         return maxwater
-                

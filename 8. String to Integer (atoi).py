@@ -1,3 +1,5 @@
+
+## 双指针，从两端开始遍历
 class Solution:
     # @return an integer
     def myAtoi(self, str):
