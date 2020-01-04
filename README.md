@@ -18,3 +18,7 @@
 ### DP
 
 ### Array
+
+### Hash
+
+1. [Two Sum](./src/1.Two\bSum.py)
