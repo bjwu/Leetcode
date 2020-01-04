@@ -1,3 +1,6 @@
+"""
+给定一棵二叉树，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
+"""
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -6,24 +9,25 @@
 #         self.right = None
 
 class Solution:
-    def rightSideView(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
-        ### 其实就是一个levelwise遍历的过程
-        memo = []
-        def helper(root, level):
-            if not root:
-                return
-            else:
-                if len(memo) == level:
-                    memo.append([])
-                memo[level].append(root.val)
-                helper(root.left, level+1)
-                helper(root.right, level+1)
-        helper(root, 0)
-        return [s[-1] for s in memo]
+    def rightSideView(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
+        stack = []
+        ans = [root.val]
+        if root.left:
+            stack.append((root.left, 1))
+        if root.right:
+            stack.append((root.right, 1))
+        while stack:
+            curr = stack.pop(0)
+            if not stack or curr[1] != stack[0][1]:
+                ans.append(curr[0].val)
+            if curr[0].left:
+                stack.append((curr[0].left, curr[1]+1))
+            if curr[0].right:
+                stack.append((curr[0].right, curr[1]+1))
+        return ans
+    
 # 我的解答是把每一层的元素从左往右都写出来，但是为什么不从右往左，每次只写第一个元素呢？
 # ```py
 # class Solution:

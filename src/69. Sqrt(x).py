@@ -10,7 +10,6 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
         left, right = 0, max(x, 1)
-
         while (left < right):
             mid = left + (right - left + 1) // 2
             if mid * mid <= x:
