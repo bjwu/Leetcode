@@ -13,12 +13,24 @@
 
 ### String
 
-1. 
+[8. String to Integer (atoi).py][src/8.%20String%20to%20Integer%20(atoi).py]
 
-### DP
+### Linked List
+
+[2.Add-Two-Numbers.py][src/2.Add-Two-Numbers.py]
+
+### Tree
+
+### Dynamic Programming
+
+### Backtracking
+
+### Binary Search
 
 ### Array
 
 ### Hash
 
-1. [Two Sum](src/1.Two%20Sum.py)
+[1.Two Sum](src/1.Two-Sum.py)
+
+### Math
