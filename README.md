@@ -21,4 +21,4 @@
 
 ### Hash
 
-1. [Two Sum](./src/1.Two\bSum.py)
+1. [Two Sum](src/1.Two%20Sum.py)
