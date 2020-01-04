@@ -13,11 +13,11 @@
 
 ### String
 
-[8. String to Integer (atoi).py][src/8.%20String%20to%20Integer%20(atoi).py]
+[8. String to Integer (atoi).py](src/8.%20String%20to%20Integer%20(atoi).py)
 
 ### Linked List
 
-[2.Add-Two-Numbers.py][src/2.Add-Two-Numbers.py]
+[2.Add-Two-Numbers.py](src/2.Add-Two-Numbers.py)
 
 ### Tree
 
