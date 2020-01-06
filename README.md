@@ -23,6 +23,8 @@
 
 [3. Longest Substring Without Repeating Characters](src/3.%20Longest%20Substring%20Without%20Repeating%20Characters.py)
 
+[5. Longest Palindromic Substring](src/5.%20Longest%20Palindromic%20Substring.py)
+
 ### Backtracking
 
 ### Binary Search
